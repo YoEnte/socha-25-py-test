@@ -1,5 +1,5 @@
 # socha-25-py-test
-Test Client für Socha 2025, um zu wissen wie Python dieses Jahr läuft
+Test Client für Socha 2025, um zu wissen wie Python dieses Jahr läuft + für Tutoring
 
 python logic.py -b -d buildName -a manylinux2014_x86_64
 
