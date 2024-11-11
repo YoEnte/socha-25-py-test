@@ -18,13 +18,25 @@ class Logic(IClientHandler):
     # this method is called every time the server is requesting a new move
     # this method should always be implemented otherwise the client will be disqualified
     def calculate_move(self) -> Move:
-        return random.choice(self.game_state.possible_moves())
+
+        poss = self.game_state.possible_moves();
+        
+
+        return random.choice(poss)
 
     # this method is called every time the server has sent a new game state update
     # this method should be implemented to keep the game state up to date
     def on_update(self, state: GameState) -> None:
         self.game_state = state
 
+        poss = self.game_state.possible_moves();
+
+        print("\n\n")
+        print("turn:", self.game_state.turn)
+        print(self.game_state.clone_current_player())
+        print(self.game_state.clone_other_player())
+        for p in poss:
+            print(p)
 
 if __name__ == "__main__":
     Starter(logic=Logic())
