@@ -33,7 +33,7 @@ class Hund:
         return self.happines
     
     def __repr__(self) -> str:
-        return self.name + " ist ein " + self.fellfarbe + "er " + self.rasse.__repr__() + ", der schon " + str(self.alter) + " Jahre auf dem Buckel hat."
+        return self.name + " ist ein " + self.fellfarbe + "er " + str(self.rasse) + ", der schon " + str(self.alter) + " Jahre auf dem Buckel hat."
 
 
 rasse1 = Rasse("Labrador");
@@ -45,8 +45,12 @@ print(timmi)
 timmi.altern()
 print(timmi)
 
+
 print(timmi.istHappy())
+
 timmi.spielen()
 print(timmi.istHappy())
+
 timmi.spielen(30)
 print(timmi.istHappy())
+print(timmi.happines)

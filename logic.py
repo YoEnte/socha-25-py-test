@@ -19,16 +19,37 @@ class Logic(IClientHandler):
     # this method should always be implemented otherwise the client will be disqualified
     def calculate_move(self) -> Move:
 
+        # alles aktuell spielbaren Züge vom eigenen Bot
         poss = self.game_state.possible_moves();
-        
 
+        print("\n\n")
+
+        # aktueller Zug (Zahl)
+        print("Zug:", self.game_state.turn)
+
+        # aktuller Spieler
+        print("Ich:", self.game_state.clone_current_player())
+
+        # anderer Spieler und ein paar Wert
+        noobPlayer = self.game_state.clone_other_player()
+        print("Der Andere:", noobPlayer)
+        print("Karotten:", noobPlayer.carrots, "| Karten:", noobPlayer.cards, "| Position:", noobPlayer.position)
+        
+        # das Spielfeld
+        print("\n")
+        print(self.game_state.board.track)
+
+        # Zug zurückschicken
         return random.choice(poss)
 
     # this method is called every time the server has sent a new game state update
     # this method should be implemented to keep the game state up to date
     def on_update(self, state: GameState) -> None:
+        
+        # aktuelles GameState Objekt (state) wird in self.game_state gespeichert
         self.game_state = state
 
+        ''' mein debug stuff, ist aber eig das gleiche wie oben
         poss = self.game_state.possible_moves();
 
         print("\n\n")
@@ -37,6 +58,7 @@ class Logic(IClientHandler):
         print(self.game_state.clone_other_player())
         for p in poss:
             print(p)
+        '''
 
 if __name__ == "__main__":
     Starter(logic=Logic())
