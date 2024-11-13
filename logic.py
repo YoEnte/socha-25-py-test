@@ -15,6 +15,9 @@ from socha.starter import Starter
 class Logic(IClientHandler):
     game_state: GameState
 
+    def schlauerMove(self):
+        return 1
+    
     # this method is called every time the server is requesting a new move
     # this method should always be implemented otherwise the client will be disqualified
     def calculate_move(self) -> Move:
@@ -38,6 +41,8 @@ class Logic(IClientHandler):
         # das Spielfeld
         print("\n")
         print(self.game_state.board.track)
+        
+        
 
         # Zug zurückschicken
         return random.choice(poss)
