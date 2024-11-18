@@ -6,7 +6,15 @@ from typing import Optional, Tuple
 from socha import (
     Field,
     GameState,
-    Move
+    Move,
+    Advance,
+    EatSalad,
+    ExchangeCarrots,
+    FallBack,
+    Card,
+    Board,
+    Hare,
+    TeamEnum
 )
 from socha.api.networking.game_client import IClientHandler
 from socha.starter import Starter
@@ -45,7 +53,7 @@ class Logic(IClientHandler):
         
 
         # Zug zurückschicken
-        return random.choice(poss)
+        return Move(action=Advance(distance=60, cards=[]))
 
     # this method is called every time the server has sent a new game state update
     # this method should be implemented to keep the game state up to date
