@@ -1,7 +1,8 @@
 # socha-25-py-test
-Test Client für Socha 2025, um zu wissen wie Python dieses Jahr läuft + für Tutoring
+Test Bot for [Software Challenge Germany](https://software-challenge.de/) 2025, where I take part as official tutor.
+Repo is there to show examples for participants etc.
 
 build:
 python logic.py -b -d buildName -a manylinux2014_x86_64
 
-bei Downloadfehler: pip install -I setuptool 
+downloaderror: pip install -I setuptool 
