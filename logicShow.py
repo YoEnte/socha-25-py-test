@@ -26,6 +26,19 @@ class Logic(IClientHandler):
     # this method is called every time the server is requesting a new move
     # this method should always be implemented otherwise the client will be disqualified
     def calculate_move(self) -> Move:
+
+        # Variable für alle possible Moves
+
+        # Gib alle Felder
+
+        # Stats eigener Spieler
+
+        # Karotten anderer Spieler in neuer Methode
+
+        # Ob ein spezieller Feldtyp in Reichweite ist
+
+        # Noch eine Idee?
+
         return random.choice(self.game_state.possible_moves())
 
     # this method is called every time the server has sent a new game state update
