@@ -44,8 +44,8 @@ class Logic(IClientHandler):
         
         # Ob ein spezieller Feldtyp in Reichweite ist
         for p in poss:
-            if "Advance" in type(p.action):
-                if  self.game_state.board.get_field(player.position + p.action.distance) == Field.Salad:
+            if "advance" in type(p.action):
+                if self.game_state.board.get_field(player.position + p.action.distance) == Field.Salad:
                     print(p)
         
         # Noch eine Idee?
