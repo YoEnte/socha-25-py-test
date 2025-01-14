@@ -58,9 +58,7 @@ class Logic(IClientHandler):
 
         for i in range(playerPos, 0, -1):
             if self.game_state.board.get_field(i) == Field.Hedgehog:
-                distance = playerPos - i
-
-        return distance
+                return playerPos - i
     
     # count cards of player
     def countCards(self, cardType: Card) -> int:
